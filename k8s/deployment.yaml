@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oo2d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oo2d
+  template:
+    metadata:
+      labels:
+        app: oo2d
+    spec:
+      containers:
+      - image: okteto.dev/oo2d:latest
+        name: oo2d
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "fa63a341-3cd6-4903-9d11-466219db65ad"
+        - name: Vless_Path
+          value: "/magt47fsdfse"
+        - name: Vmess_UUID
+          value: "fa63a341-3cd6-4903-9d11-466219db65ad"
+        - name: Vmess_Path
+          value: "/wdfghsfr4ssg"
+        - name: Share_Path
+          value: "/v2link"
